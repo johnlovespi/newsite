@@ -2,6 +2,6 @@ FIRST ATTEMT FOR personal webpage on jekyll
 ----
 
 
-# ABOUT  
+# ABOUT  john 
 
 stuff about my page
