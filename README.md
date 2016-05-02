@@ -40,15 +40,12 @@ strong:hover {
   float: right;
   margin-right: 100px;
   padding-top: 30px;
-
-}
+  }
 .line{
   margin-left: 0px;
   margin-bottom: px;
   height: 2px;
-   
-  
-}
+  }
 b {
   color:  #ffaa00;
   #ffaa00
@@ -57,7 +54,6 @@ b:hover {
     text-decoration: none;
     background-color: black;
 }
-
 .insideBody{
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   margin: 1px;
@@ -134,7 +130,54 @@ a:link {
 fieldset{
   border-radius: 5px;
 }
+/*Toggel Email animation*/
+.toggler {
+    width: 500px;
+    height: 200px;
+  }
+  #button {
+    padding: .5em 1em;
+    text-decoration: none;
+  }
+  #effect {
+    position: relative;
+    width: 240px;
+    height: 135px;
+    padding: 0.4em;
+  }
+  #effect h3 {
+    margin: 0;
+    padding: 0.4em;
+    text-align: center;
+  }
+
 </style>
+<script>
+  $(function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 0 };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // run the effect
+      $( "#effect" ).toggle( selectedEffect, options, 500 );
+    };
+ 
+    // set effect from select menu value
+    $( "#button" ).click(function() {
+      runEffect();
+    });
+  });
+  </script>
 <title>John Espinoza</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
